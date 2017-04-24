@@ -1,0 +1,49 @@
+<!--
+General Assembly, WDI (Web Development Immersive) Remote, Cohort 04 (Matey)
+Copyright (C) 2016 Matt Brendzel under the GNU General Public License.
+See LICENSE for details.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Rock+Salt" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-3.1.1.js"
+			  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+			  crossorigin="anonymous">
+    </script>
+    <script src='hw.js'></script>
+  </head>
+  <body>
+    <header>
+      <h1> Tic Tac Toe </h1>
+      <div>
+        <button id='AI'>Vs. Computer</button>
+        <button id='two_player'>Vs. Human</button>
+      </div>
+    </header>
+    <aside class="scoreTally">
+      <span class="X">X</span><hr><h2>0</h2>
+      <span class="O">O</span><hr><h2>0</h2>
+    </aside>
+    <main>
+      <div id='board' class='board'>
+        <div data-position="0"></div>
+        <div data-position="1"></div>
+        <div data-position="2"></div>
+        <div data-position="3"></div>
+        <div data-position="4"></div>
+        <div data-position="5"></div>
+        <div data-position="6"></div>
+        <div data-position="7"></div>
+        <div data-position="8"></div>
+      </div>
+      <div id="flash-msg"></div>
+    </main>
+    <aside class="currentPlayer">
+      Current Player:<br><span class="X">X</span>
+    </aside>
+  </body>
+</html>

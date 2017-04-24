@@ -1,0 +1,181 @@
+/*
+General Assembly, WDI (Web Development Immersive) Remote, Cohort 04 (Matey)
+Copyright (C) 2016 Matt Brendzel under the GNU General Public License.
+See LICENSE for details.
+*/
+
+/*Styling inspiration from https://play.google.com/store/apps/details?id=com.arcsys.tictactoe*/
+
+/*Colors taken from http://s.mxmcdn.net/images-storage/albums/9/3/7/7/4/9/31947739_800_800.jpg*/
+
+/*https://css-tricks.com/perfect-full-page-background-image/*/
+
+/*https://unsplash.com/search/neon?photo=F9o7u-CnDJk*/
+
+html {
+  background: url(BG.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  font-size: 2vh;
+  padding: 1em;
+}
+
+header{
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Monoton";
+  color: #fff;
+  font-size: 5em;
+  margin: 0;
+}
+
+button {
+  font-size: 1em;
+  padding: 0.5em 1em;
+  width: 12.5em;
+  color: #fff;
+  font-family: "Monoton";
+  margin: 3em;
+  border-radius: 0.75em;
+  background-color: rgb(3,41,124);
+  border: 0.1em solid rgb(181,222,246);
+  box-shadow: inset 0 0 1.25em rgb(59,115,171), 0 0 1.25em rgb(59,115,171);
+  transition: all 0.15s ease;
+}
+
+button:hover{
+  background-color: rgb(6,52,157);
+}
+
+button:active{
+  background-color: rgb(3,31,101);
+}
+
+main {
+  float: left;
+  width: 100%;
+}
+
+.board {
+  display: none;
+  height: 20em;
+  width: 20em;
+  background-color: #fff;
+  border-radius: 0.5em;
+  margin: 0 auto;
+  box-shadow: rgb(59,115,171) 0 0 1.25em;
+}
+
+.board > div {
+  float: left;
+  height: 32.1%;
+  width: 32.1%;
+  margin: 0.6%;
+  background-color: rgb(37,0,34);
+  font-family: "Rock Salt";
+  font-weight: 900;
+  text-align: center;
+  font-size: 3em;
+  transition: all 0.15s ease;
+}
+
+.board > div:hover{
+    background-color: rgb(52,0,58);
+}
+
+[data-position="0"] {
+  border-radius: 0.125em 0 0 0;
+}
+
+[data-position="2"] {
+  border-radius: 0 0.125em 0 0;
+}
+
+[data-position="6"] {
+  border-radius: 0 0 0 0.125em;
+}
+
+[data-position="8"] {
+  border-radius: 0 0 0.125em 0;
+}
+
+.currentPlayer, .scoreTally {
+  display: none;
+  width: 5em;
+  font-family: "Rock Salt";
+  color: #fff;
+  text-align: center;
+}
+
+.currentPlayer {
+  position: absolute;
+  right: 7em;
+  top: 20em;
+  font-size: 1em;
+}
+
+.scoreTally {
+  position: absolute;
+  left: 9em;
+  top: 26em;
+  font-size: 0.75em;
+}
+
+.currentPlayer span {
+  font-size: 3em;
+}
+
+.scoreTally span {
+  font-size: 2em;
+}
+
+#flash-msg {
+  font-family: "Rock Salt";
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  margin: 1em;
+}
+
+.O {
+  color: rgb(197,251,253);
+  text-shadow: rgb(71,82,202) 0 0 0.5em;
+}
+
+.X {
+  color: rgb(252,137,41);
+  text-shadow: rgb(249, 16, 28) 0 0 0.5em;
+}
+
+.X.Win {
+  background-color: rgb(175,11,11);
+  box-shadow: rgb(249, 16, 28) 0 0 2em;
+  transition: all 1s;
+}
+
+.X.Win:hover {
+  background-color: rgb(175,11,11);
+}
+
+.O.Win {
+  background-color: rgb(27, 92, 255);
+  box-shadow: rgb(71,82,202) 0 0 2em;
+  transition: all 1s;
+}
+
+.O.Win:hover {
+  background-color: rgb(27, 92, 255);
+}
+
+/*Everything's sizing is based on em's to be dynamic.. if window width is above 1200px, sizing is scaled based on window height, if below 1200px when things start to collide, sizing is based on window width*/
+@media (max-width: 1200px) {
+  body {
+    font-size: 2vw;
+  }
+}
